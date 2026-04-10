@@ -17,7 +17,7 @@
 body{background:var(--bg);color:var(--txt);font-family:'JetBrains Mono',monospace;padding-bottom:20px;min-height:100vh;overflow-x:hidden}
 #pcv{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.3}
 .wrap{max-width:620px;margin:0 auto;padding:12px;position:relative;z-index:1}
-
+ 
 /* HEADER */
 header{background:linear-gradient(160deg,#050b15,#0b1230,#100b25);padding:14px 16px 10px;text-align:center;border-bottom:1px solid var(--bdr)}
 .elbl{font-size:.58rem;color:var(--warn);letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:4px}
@@ -31,32 +31,32 @@ header{background:linear-gradient(160deg,#050b15,#0b1230,#100b25);padding:14px 1
 .qbox{background:rgba(0,0,0,.42);padding:9px 13px;border-radius:8px;border-left:3px solid var(--warn);min-height:50px;display:flex;flex-direction:column;justify-content:center;transition:opacity .5s;margin-top:8px}
 .qt{font-size:.7rem;font-style:italic;line-height:1.55;color:var(--txt);margin-bottom:3px}
 .qa{font-size:.58rem;color:var(--warn);font-weight:700;text-align:right;text-transform:uppercase;letter-spacing:1px}
-
+ 
 /* CARDS */
 .card{background:var(--card);border-radius:14px;padding:15px;margin-bottom:13px;border:1px solid var(--bdr);position:relative;overflow:hidden}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--acc2),var(--acc),transparent);opacity:.4}
 h2{font-size:.85rem;margin-bottom:11px;color:var(--acc);display:flex;align-items:center;justify-content:space-between;letter-spacing:.5px;text-transform:uppercase}
-
+ 
 /* TABS */
 .tab{display:none;animation:fi .25s ease}
 .tab.active{display:block}
 @keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
+ 
 /* NAV — TOP */
 nav{position:sticky;top:0;width:100%;background:rgba(8,14,26,.97);display:flex;border-bottom:1px solid var(--bdr);padding:0;padding-top:env(safe-area-inset-top);z-index:200;justify-content:space-around;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .nb{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);font-size:.56rem;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;flex:1;padding:8px 4px 7px;transition:.18s;font-family:'JetBrains Mono',monospace;letter-spacing:.5px}
 .nb .ni{font-size:1rem;line-height:1}
 .nb.active{color:var(--acc);border-bottom-color:var(--acc);background:rgba(79,142,247,.07)}
-
+ 
 /* GRIDS */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
-
+ 
 /* STAT */
 .stat{background:rgba(0,0,0,.35);padding:11px;border-radius:9px;text-align:center;border:1px solid var(--bdr)}
 .sn{font-size:1.4rem;font-weight:900;display:block;font-variant-numeric:tabular-nums}
 .st{font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-top:2px;display:block}
-
+ 
 /* BUTTONS */
 .btn{background:var(--acc);color:#fff;border:none;padding:11px;border-radius:8px;font-weight:700;cursor:pointer;width:100%;transition:.15s;font-size:.82rem;font-family:'JetBrains Mono',monospace;letter-spacing:.5px}
 .btn:active{transform:scale(.96);opacity:.82}
@@ -65,7 +65,7 @@ nav{position:sticky;top:0;width:100%;background:rgba(8,14,26,.97);display:flex;b
 .bwarn{background:var(--warn);color:#000}
 .bghost{background:transparent;border:1px solid var(--bdr);color:var(--txt)}
 .bsm{padding:8px 11px;font-size:.72rem;width:auto}
-
+ 
 /* POMODORO */
 .pomoring{position:relative;width:155px;height:155px;margin:0 auto 11px}
 .psv{width:100%;height:100%;transform:rotate(-90deg)}
@@ -75,7 +75,7 @@ nav{position:sticky;top:0;width:100%;background:rgba(8,14,26,.97);display:flex;b
 .pmin{font-size:1.9rem;font-weight:900;display:block;font-variant-numeric:tabular-nums}
 .pmode{font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
 .pbtns{display:flex;gap:8px}
-
+ 
 /* FLASHCARD */
 .fcs{width:100%;height:195px;perspective:1200px;margin-bottom:11px;cursor:pointer}
 .fcc{width:100%;height:100%;position:relative;transition:transform .55s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
@@ -91,7 +91,7 @@ nav{position:sticky;top:0;width:100%;background:rgba(8,14,26,.97);display:flex;b
 .fcsr{display:flex;gap:8px;font-size:.7rem;color:var(--muted);justify-content:space-between;background:rgba(0,0,0,.3);padding:9px 13px;border-radius:8px;margin-top:9px}
 .fcpb{height:3px;background:var(--bdr);border-radius:2px;margin-bottom:9px;overflow:hidden}
 .fcpbf{height:100%;background:linear-gradient(90deg,var(--acc),var(--ok));border-radius:2px;transition:width .4s}
-
+ 
 /* TRACKER */
 .bi{background:rgba(0,0,0,.3);margin-bottom:9px;border-radius:9px;padding:12px;border:1px solid var(--bdr);transition:.3s}
 .bi.done{border-color:rgba(15,214,138,.4)}
@@ -102,7 +102,7 @@ nav{position:sticky;top:0;width:100%;background:rgba(8,14,26,.97);display:flex;b
 .tl:active{background:var(--bdr)}
 .tl.ck{border-color:var(--ok);color:var(--ok)}
 .tl input{width:14px;height:14px;accent-color:var(--acc);pointer-events:none;flex-shrink:0}
-
+ 
 /* ACHIEVEMENT MODAL */
 .mov{position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s}
 .mov.show{opacity:1;pointer-events:auto}
@@ -112,7 +112,7 @@ nav{position:sticky;top:0;width:100%;background:rgba(8,14,26,.97);display:flex;b
 @keyframes spin{from{transform:rotate(-20deg) scale(.4)}to{transform:rotate(0) scale(1)}}
 .mtit{font-size:1.1rem;font-weight:900;margin-bottom:5px;color:var(--warn)}
 .msub{font-size:.78rem;color:var(--muted);margin-bottom:16px;line-height:1.6;white-space:pre-line}
-
+ 
 /* ACHIEVEMENTS GRID */
 .ag{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
 .ai{background:rgba(0,0,0,.35);border:1px solid var(--bdr);border-radius:9px;padding:11px 7px;text-align:center;transition:.3s}
@@ -121,7 +121,7 @@ nav{position:sticky;top:0;width:100%;background:rgba(8,14,26,.97);display:flex;b
 .ai.earned .aico{filter:none}
 .anm{font-size:.58rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
 .ai.earned .anm{color:var(--warn)}
-
+ 
 /* HEATMAP */
 .hm{display:flex;flex-wrap:wrap;gap:3px;margin-top:8px}
 .hd{width:12px;height:12px;border-radius:3px;background:var(--bdr);transition:.3s}
@@ -131,33 +131,33 @@ nav{position:sticky;top:0;width:100%;background:rgba(8,14,26,.97);display:flex;b
 .hd.today{outline:2px solid var(--warn);border-radius:4px}
 .hleg{display:flex;align-items:center;gap:5px;margin-top:7px;font-size:.58rem;color:var(--muted)}
 .hsq{width:9px;height:9px;border-radius:2px}
-
+ 
 /* PROGRESS RING */
 .rw{position:relative;width:76px;height:76px;flex-shrink:0}
 .rsv{width:100%;height:100%;transform:rotate(-90deg)}
 .rbg{fill:none;stroke:var(--bdr);stroke-width:7}
 .rfg{fill:none;stroke:var(--ok);stroke-width:7;stroke-linecap:round;stroke-dasharray:220;stroke-dashoffset:220;transition:stroke-dashoffset .5s ease}
 .rtxt{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.8rem;font-weight:900;text-align:center}
-
+ 
 /* CHART */
 .cw{position:relative;width:100%;height:125px;margin-top:11px}
-
+ 
 /* FOCUS MODE */
 #fov{position:fixed;inset:0;background:#030810;z-index:300;display:none;flex-direction:column;align-items:center;justify-content:center;padding:18px;gap:17px}
 #fov.show{display:flex}
 .fclose{position:absolute;top:14px;right:14px;background:none;border:1px solid var(--bdr);color:var(--muted);border-radius:8px;padding:5px 11px;font-size:.7rem;cursor:pointer;font-family:'JetBrains Mono',monospace}
-
+ 
 /* TOAST */
 #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(18px);background:var(--bg3);border:1px solid var(--acc);border-radius:10px;padding:9px 18px;font-size:.75rem;font-weight:700;color:var(--acc);opacity:0;transition:.3s;z-index:600;pointer-events:none;white-space:nowrap;max-width:90vw;text-align:center}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-
+ 
 /* TRYOUT */
 .tri{background:rgba(0,0,0,.3);padding:12px;border-radius:9px;margin-bottom:8px;border:1px solid var(--bdr);display:flex;justify-content:space-between;align-items:center;transition:.3s}
 .tri.open{border-color:rgba(15,214,138,.35)}
 .trbtn{background:var(--ok);color:#000;border:none;padding:8px 13px;border-radius:6px;font-weight:700;cursor:pointer;font-size:.72rem;font-family:'JetBrains Mono',monospace;transition:.15s}
 .trbtn:disabled{background:var(--bdr);color:var(--muted);cursor:not-allowed}
 .trbtn:not(:disabled):active{transform:scale(.95)}
-
+ 
 /* MISC */
 .nl{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:11px}
 .bno{background:#eceeed;color:#111;text-decoration:none;padding:11px 9px;border-radius:8px;text-align:center;font-weight:700;font-size:.76rem;display:flex;flex-direction:column;gap:4px;border:1px solid #bbb;transition:.15s}
@@ -182,16 +182,16 @@ nav{position:sticky;top:0;width:100%;background:rgba(8,14,26,.97);display:flex;b
 .score-ring{width:90px;height:90px;margin:0 auto 10px;position:relative}
 .score-ring svg{transform:rotate(-90deg)}
 .score-ring-txt{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;font-size:1.2rem;font-weight:900}
-
+ 
 footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter-spacing:1px;border-top:1px solid var(--bdr);margin-top:8px}
 .kn{display:block;font-size:.95rem;color:var(--acc);font-weight:700;margin-top:4px;letter-spacing:3px;font-family:'Noto Sans JP',sans-serif}
 </style>
 </head>
 <body>
-
+ 
 <canvas id="pcv"></canvas>
 <div id="toast"></div>
-
+ 
 <!-- NAV — TOP -->
 <nav id="bnav">
   <button class="nb active" data-t="tab-dash"><span class="ni">📊</span>Dash</button>
@@ -200,7 +200,7 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
   <button class="nb" data-t="tab-try"><span class="ni">⚔️</span>Ujian</button>
   <button class="nb" data-t="tab-stats"><span class="ni">📈</span>Stats</button>
 </nav>
-
+ 
 <!-- ACHIEVEMENT MODAL -->
 <div class="mov" id="acm">
   <div class="mdl">
@@ -210,7 +210,7 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
     <button class="btn bwarn" onclick="closeAch()">Terima kasih! 🎌</button>
   </div>
 </div>
-
+ 
 <!-- FOCUS MODE -->
 <div id="fov">
   <button class="fclose" onclick="toggleFocus()">✕ Keluar Focus</button>
@@ -235,10 +235,13 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
     </div>
   </div>
 </div>
-
+ 
 <!-- HEADER -->
 <header>
-  <div class="elbl">目標: JLPT N4 — 5 JULI 2026 — 08:30 WIB</div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px">
+    <div class="elbl" style="margin:0">目標: JLPT N4 — 5 JULI 2026</div>
+    <div id="sync-status" style="font-size:.62rem;font-weight:700"><span style="color:var(--muted)">◌ Memuat...</span></div>
+  </div>
   <div class="clk" id="clk">00:00:00:00</div>
   <div class="clks"><span>HARI</span><span>JAM</span><span>MENIT</span><span>DETIK</span></div>
   <div class="sbar">
@@ -255,9 +258,9 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
     <div class="qa" id="qa">— System</div>
   </div>
 </header>
-
+ 
 <div class="wrap">
-
+ 
 <!-- TAB DASH -->
 <div id="tab-dash" class="tab active">
   <div class="card">
@@ -272,7 +275,7 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
     </div>
     <button class="btn bghost" style="font-size:.78rem" onclick="toggleFocus()">⛩ Aktifkan Focus Mode + Pomodoro</button>
   </div>
-
+ 
   <div class="card">
     <h2>Kinerja <span>📊</span></h2>
     <div class="g2" style="margin-bottom:9px">
@@ -297,7 +300,7 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
     </div>
     <div class="cw"><canvas id="pcht" role="img" aria-label="Progress per bab">Progress belajar per bab.</canvas></div>
   </div>
-
+ 
   <div class="card">
     <h2>Heatmap Aktivitas <span>🗓</span></h2>
     <div class="hm" id="hmap"></div>
@@ -307,13 +310,13 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
       <div class="hsq" style="background:#4f8ef7"></div><span>Aktif</span>
     </div>
   </div>
-
+ 
   <div class="card">
     <h2>Pencapaian <span>🏆</span></h2>
     <div class="ag" id="agrd"></div>
   </div>
 </div>
-
+ 
 <!-- TAB TRACKER -->
 <div id="tab-track" class="tab">
   <div class="card">
@@ -322,7 +325,7 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
     <div id="tlist"></div>
   </div>
 </div>
-
+ 
 <!-- TAB FLASH -->
 <div id="tab-flash" class="tab">
   <div class="card">
@@ -362,7 +365,7 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
     </div>
   </div>
 </div>
-
+ 
 <!-- TAB UJIAN -->
 <div id="tab-try" class="tab">
   <div class="card">
@@ -371,17 +374,17 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
     <p style="font-size:.7rem;color:var(--warn);margin-bottom:11px;font-weight:700" id="tryr">–</p>
     <div id="trylist"></div>
   </div>
-
+ 
   <!-- Active quiz area -->
   <div id="quizArea"></div>
-
+ 
   <!-- Score history -->
   <div class="card" id="scoreCard" style="display:none">
     <h2>Riwayat Skor <span>📋</span></h2>
     <div id="scoreHistory"></div>
   </div>
 </div>
-
+ 
 <!-- TAB STATS -->
 <div id="tab-stats" class="tab">
   <div class="card">
@@ -400,14 +403,103 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
   </div>
   <div class="card"><h2>Rekap <span>🎌</span></h2><div id="srec"></div></div>
 </div>
-
+ 
 <footer>
   CREATED & DESIGNED FOR:
   <span class="kn">イクサン・アジ・プトラ・アル・ファルク</span>
   <div style="margin-top:4px;font-size:.58rem;opacity:.45">(Ikhsan Aji Putra Al Faruq)</div>
 </footer>
 </div>
-
+ 
+<script type="module">
+// ============================================================
+// FIREBASE SYNC — REAL-TIME CLOUD
+// ============================================================
+import{initializeApp}from'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import{getFirestore,doc,setDoc,onSnapshot,getDoc}from'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+ 
+const firebaseConfig={
+  apiKey:"AIzaSyABA9fkznlaHSk8zqkouTd0TVa6DR48ugQ",
+  authDomain:"jlpt-tracker-cd03f.firebaseapp.com",
+  projectId:"jlpt-tracker-cd03f",
+  storageBucket:"jlpt-tracker-cd03f.firebasestorage.app",
+  messagingSenderId:"371403935529",
+  appId:"1:371403935529:web:b6d87a1bf932c6c5cd7138"
+};
+ 
+const fbApp=initializeApp(firebaseConfig);
+const db=getFirestore(fbApp);
+const USER_ID='ikhsan_jlpt_n4';
+const docRef=doc(db,'users',USER_ID);
+ 
+let syncTimeout=null;
+let isSyncing=false;
+ 
+window.showSyncStatus=function(status){
+  const el=document.getElementById('sync-status');
+  if(!el)return;
+  const cfg={
+    syncing:{icon:'⟳',txt:'Menyimpan...',col:'var(--warn)'},
+    synced: {icon:'☁',txt:'Tersinkron',col:'var(--ok)'},
+    offline: {icon:'⚠',txt:'Offline',col:'var(--red)'},
+    loading: {icon:'◌',txt:'Memuat...',col:'var(--muted)'},
+  };
+  const c=cfg[status]||cfg.synced;
+  el.innerHTML=`<span style="color:${c.col};font-size:.62rem;font-weight:700">${c.icon} ${c.txt}</span>`;
+};
+ 
+window.scheduleCloudSave=function(){
+  clearTimeout(syncTimeout);
+  syncTimeout=setTimeout(async()=>{
+    if(isSyncing)return;
+    isSyncing=true;
+    showSyncStatus('syncing');
+    try{
+      await setDoc(docRef,{data:JSON.stringify(window.D),updatedAt:Date.now()});
+      showSyncStatus('synced');
+    }catch(e){
+      showSyncStatus('offline');
+    }
+    isSyncing=false;
+  },800);
+};
+ 
+// Real-time listener — semua device update otomatis
+onSnapshot(docRef,snapshot=>{
+  if(!snapshot.exists())return;
+  const remote=snapshot.data();
+  if(!remote||!remote.data)return;
+  try{
+    if(remote.updatedAt&&remote.updatedAt>(window._lastLocalSave||0)){
+      const parsed=JSON.parse(remote.data);
+      window.D=Object.assign({},window.DEF||{},parsed);
+      try{localStorage.setItem('jlpt_ult_v6',JSON.stringify(window.D));}catch(_){}
+      if(window.analyzeData)window.analyzeData();
+      showSyncStatus('synced');
+    }
+  }catch(e){}
+},{error:()=>showSyncStatus('offline')});
+ 
+// Load awal dari cloud lalu init seluruh app
+window._lastLocalSave=0;
+showSyncStatus('loading');
+(async()=>{
+  try{
+    const snap=await getDoc(docRef);
+    if(snap.exists()&&snap.data()&&snap.data().data){
+      const parsed=JSON.parse(snap.data().data);
+      window.D=Object.assign({},window.DEF||{},parsed);
+      try{localStorage.setItem('jlpt_ult_v6',JSON.stringify(window.D));}catch(_){}
+    }
+  }catch(e){
+    showSyncStatus('offline');
+  }
+  // Signal bahwa Firebase sudah siap
+  window._fbReady=true;
+  document.dispatchEvent(new Event('fb-ready'));
+})();
+</script>
+ 
 <script>
 // ============================================================
 // CONFIG & STORE
@@ -417,15 +509,24 @@ const START=new Date('2026-04-11T00:00:00+07:00');
 const EXAM=new Date('2026-07-05T08:30:00+07:00').getTime();
 const TKS=['v1','v2','voc','grm','evl','knj'];
 const TKL={v1:'Vid 1',v2:'Vid 2',voc:'Vocab',grm:'Gram',evl:'Eval',knj:'Kanji'};
-
+ 
 const DEF={progress:{},streak:0,lastActive:'',xp:0,heatmap:{},achEarned:[],pomoCycles:0,fcKnown:0,fcForgot:0};
+window.DEF=DEF;
 let D=Object.assign({},DEF);
+// Load dari localStorage dulu sebagai fallback sementara Firebase siap
 try{const s=localStorage.getItem(STORE);if(s)D=Object.assign({},DEF,JSON.parse(s));}catch(_){}
-
-function save(){try{localStorage.setItem(STORE,JSON.stringify(D));}catch(_){}analyzeData();}
+window.D=D;
+ 
+function save(){
+  window._lastLocalSave=Date.now();
+  window.D=D;
+  try{localStorage.setItem(STORE,JSON.stringify(D));}catch(_){}
+  analyzeData();
+  if(window.scheduleCloudSave)window.scheduleCloudSave();
+}
 function deb(fn,ms){let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms);}}
 const svD=deb(save,400);
-
+ 
 // ============================================================
 // PARTICLES
 // ============================================================
@@ -449,7 +550,7 @@ const svD=deb(save,400);
   }
   fr();
 })();
-
+ 
 // ============================================================
 // WEB AUDIO — Suara Sintetis Khas Jepang
 // ============================================================
@@ -457,7 +558,7 @@ const AC=(()=>{try{return new(window.AudioContext||window.webkitAudioContext)();
 function unlockAC(){if(AC&&AC.state==='suspended')AC.resume();}
 document.addEventListener('touchstart',unlockAC,{once:true});
 document.addEventListener('click',unlockAC,{once:true});
-
+ 
 function snd(type){
   if(!AC)return;
   const t=AC.currentTime;
@@ -515,7 +616,7 @@ function snd(type){
     osc(1047,'sine',.6,.2,t+.2);
   }
 }
-
+ 
 // ============================================================
 // TOAST
 // ============================================================
@@ -526,7 +627,7 @@ function toast(msg){
   clearTimeout(toastT);
   toastT=setTimeout(()=>el.classList.remove('show'),2600);
 }
-
+ 
 // ============================================================
 // COUNTDOWN
 // ============================================================
@@ -541,7 +642,7 @@ function updClk(){
   el.textContent=`${d}:${h}:${m}:${s}`;
 }
 setInterval(updClk,1000);updClk();
-
+ 
 // ============================================================
 // STREAK
 // ============================================================
@@ -555,7 +656,7 @@ function updStreak(){
   D.heatmap=D.heatmap||{};
   D.heatmap[today]=(D.heatmap[today]||0)+1;
 }
-
+ 
 // ============================================================
 // QUOTES (30+)
 // ============================================================
@@ -607,7 +708,7 @@ function rotQ(){
   },500);
 }
 rotQ();setInterval(rotQ,55000);
-
+ 
 // ============================================================
 // NAV
 // ============================================================
@@ -622,14 +723,14 @@ document.getElementById('bnav').addEventListener('click',e=>{
   if(t==='tab-try'){rendTry();rendScoreHist();}
   if(t==='tab-stats')rendStats();
 });
-
+ 
 // ============================================================
 // HELPERS
 // ============================================================
 function babDone(b){const p=D.progress['b'+b];return p&&TKS.every(t=>p[t]);}
 function cntDone(){let n=0;for(let i=1;i<=TBAB;i++)if(babDone(i))n++;return n;}
 function cntTask(){let n=0;for(let i=1;i<=TBAB;i++){const p=D.progress['b'+i];if(p)TKS.forEach(t=>{if(p[t])n++;});}return n;}
-
+ 
 // ============================================================
 // ACHIEVEMENTS
 // ============================================================
@@ -672,7 +773,7 @@ function rendAch(){
     return `<div class="ai${e?' earned':''}" title="${a.desc}"><span class="aico">${a.ico}</span><div class="anm">${a.nm}</div></div>`;
   }).join('');
 }
-
+ 
 // ============================================================
 // HEATMAP
 // ============================================================
@@ -687,7 +788,7 @@ function rendHeat(){
     return `<div class="hd ${lv}${d===ts?' today':''}" title="${d}: ${v} aktivitas"></div>`;
   }).join('');
 }
-
+ 
 // ============================================================
 // ============================================================
 // DAILY RING
@@ -710,7 +811,7 @@ function updRing(){
   }
   if(de)de.textContent=`${acts} aktivitas hari ini (target: ${tgt})`;
 }
-
+ 
 // ============================================================
 // ANALYZE
 // ============================================================
@@ -719,7 +820,7 @@ function analyzeData(){
   const done=cntDone(),tasks=cntTask();
   document.getElementById('sbab').textContent=`${done}/${TBAB}`;
   document.getElementById('stsk').textContent=`${tasks}/300`;
-
+ 
   // Pace
   const tod=new Date();tod.setHours(0,0,0,0);
   const st=new Date(START);st.setHours(0,0,0,0);
@@ -740,14 +841,14 @@ function analyzeData(){
     pe.textContent=`🚨 BAHAYA! Tertinggal ${lag} bab`;pe.style.color='var(--red)';
     if(pd)pd.textContent=`Harus ${bpd} bab/hari — percepat segera!`;
   }
-
+ 
   // Tryout
   const n5=Math.ceil((done+1)/5)*5;
   const pct2=done>=50?100:((done%5)/5)*100;
   const tb=document.getElementById('tryb');if(tb)tb.style.width=pct2+'%';
   const tr=document.getElementById('tryr');
   if(tr)tr.textContent=done>=50?'✅ Semua Tryout terbuka!':`Tryout berikut: selesaikan ${Math.min(n5,50)-done} bab lagi`;
-
+ 
   // XP/Level
   const XPL=[0,100,250,500,1000,2000,3500,5000,7500,10000];
   let lv=1;for(let i=1;i<XPL.length;i++)if((D.xp||0)>=XPL[i])lv=i+1;
@@ -759,10 +860,10 @@ function analyzeData(){
   const xpb=document.getElementById('xpb');if(xpb)xpb.style.width=xpct+'%';
   const xpn=document.getElementById('xpnx');if(xpn)xpn.textContent=`${xc} / ${xnl} XP`;
   document.getElementById('snum').textContent=D.streak||0;
-
+ 
   rendPcht(done);updRing();rendHeat();rendAch();chkAch();
 }
-
+ 
 function rendPcht(){
   const lb=[],dt=[],bg=[];
   for(let i=1;i<=TBAB;i++){lb.push('B'+i);const d=babDone(i)?1:0;dt.push(d);bg.push(d?'#0fd68a':'#1e3050');}
@@ -771,7 +872,7 @@ function rendPcht(){
   pchtInst=new Chart(c.getContext('2d'),{type:'bar',data:{labels:lb,datasets:[{label:'Selesai',data:dt,backgroundColor:bg,borderRadius:2,barPercentage:.9}]},
     options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},scales:{y:{min:0,max:1,display:false},x:{ticks:{color:'#6b82a8',font:{size:7},maxRotation:0,autoSkip:true,maxTicksLimit:10},grid:{color:'rgba(255,255,255,.03)'}}},plugins:{legend:{display:false}}}});
 }
-
+ 
 // ============================================================
 // WEEKLY CHART
 // ============================================================
@@ -785,7 +886,7 @@ function rendStats(){
   if(wchInst){wchInst.data.labels=wlb;wchInst.data.datasets[0].data=wd;wchInst.update('none');}
   else{wchInst=new Chart(c.getContext('2d'),{type:'bar',data:{labels:wlb,datasets:[{label:'Aktivitas',data:wd,backgroundColor:'#4f8ef7',borderRadius:4,barPercentage:.7}]},
     options:{responsive:true,maintainAspectRatio:false,animation:{duration:300},scales:{y:{ticks:{color:'#6b82a8',font:{size:9}},grid:{color:'rgba(255,255,255,.04)'}},x:{ticks:{color:'#6b82a8',font:{size:10}},grid:{display:false}}},plugins:{legend:{display:false}}}});}
-
+ 
   const re=document.getElementById('srec');
   if(re){
     const done=cntDone(),tasks=cntTask(),fct=(D.fcKnown||0)+(D.fcForgot||0),fca=fct?Math.round((D.fcKnown/fct)*100):0;
@@ -796,7 +897,7 @@ function rendStats(){
     ].map(([i,n,v])=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:.76rem"><span>${i} ${n}</span><strong style="color:var(--acc)">${v}</strong></div>`).join('');
   }
 }
-
+ 
 // ============================================================
 // TRACKER
 // ============================================================
@@ -811,7 +912,7 @@ function rendTrack(){
     ul=done;
   }
 }
-
+ 
 document.getElementById('tlist').addEventListener('click',e=>{
   const lbl=e.target.closest('.tl');if(!lbl)return;
   const b=lbl.getAttribute('data-b'),t=lbl.getAttribute('data-t'),cb=lbl.querySelector('input');
@@ -828,7 +929,7 @@ document.getElementById('tlist').addEventListener('click',e=>{
   if(babDone(parseInt(b))){snd('bab');D.xp=(D.xp||0)+50;toast(`🎉 Bab ${b} Selesai! +60 XP おめでとう！`);}
   svD();rendTrack();
 });
-
+ 
 // ============================================================
 // FLASHCARD
 // ============================================================
@@ -879,7 +980,7 @@ const VC=[
   {jp:"最近",r:"saikin",m:"Belakangan ini",l:"N4"},{jp:"丁寧",r:"teinei",m:"Sopan / Teliti",l:"N4"},
 ];
 let shuf=[...VC].sort(()=>Math.random()-.5),fci=0,fcok=D.fcKnown||0,fcng=D.fcForgot||0;
-
+ 
 function ldCard(idx){
   document.getElementById('fcard').classList.remove('flip');
   setTimeout(()=>{
@@ -910,7 +1011,7 @@ document.getElementById('bhard').addEventListener('click',()=>{fcng++;updFcStat(
 document.getElementById('ffcard').addEventListener('click',()=>{document.getElementById('ffcard').classList.toggle('flip');snd('flip');});
 function feasy(){fcok++;updFcStat();snd('correct');D.xp=(D.xp||0)+5;fci++;ldCard(fci);svD();}
 function fhard(){fcng++;updFcStat();snd('wrong');fci++;ldCard(fci);svD();}
-
+ 
 // ============================================================
 // POMODORO
 // ============================================================
@@ -946,12 +1047,12 @@ function pTick(){
 function pToggle(){unlockAC();const btn=document.getElementById('ptoggle');if(pRun){clearInterval(pInt);pInt=null;pRun=false;btn.textContent='▶ Lanjut';}else{pInt=setInterval(pTick,1000);pRun=true;btn.textContent='⏸ Pause';snd('click');};}
 function pReset(){clearInterval(pInt);pInt=null;pRun=false;pMode='focus';pSec=PF;updPUI();document.getElementById('ptoggle').textContent='▶ Mulai';snd('click');}
 function pSkip(){clearInterval(pInt);pInt=null;pRun=false;snd('click');pMode=pMode==='focus'?'break':'focus';pSec=pMode==='focus'?PF:PB;updPUI();document.getElementById('ptoggle').textContent='▶ Mulai';}
-
+ 
 // ============================================================
 // FOCUS MODE
 // ============================================================
 function toggleFocus(){unlockAC();const el=document.getElementById('fov');el.classList.toggle('show');snd('click');}
-
+ 
 // ============================================================
 // TRYOUT — FULL INTERACTIVE ENGINE
 // ============================================================
@@ -985,10 +1086,10 @@ const TRYOUT_BANK=[
   {id:24,cat:'📝 Grammar',q:'Kalimat yang benar untuk "tidak boleh merokok" adalah...',opts:['タバコを吸ってもいいです','タバコを吸ってはいけません','タバコを吸わなくてもいいです','タバコを吸えません'],ans:1,expl:'～てはいけません = tidak boleh / dilarang. Contoh lain: ここに入ってはいけません = tidak boleh masuk ke sini.'},
   {id:25,cat:'📝 Grammar',q:'Kalimat "Saya bisa berbicara bahasa Jepang" adalah...',opts:['日本語を話します','日本語が話せます','日本語を話したいです','日本語が話しています'],ans:1,expl:'Kemampuan: ～ができます atau bentuk potensial (～える/られる). 話せます = bisa berbicara (potensial dari 話す). Partikel yang digunakan: が.'},
 ];
-
+ 
 let activeQuiz=null,quizAnswers={},quizHistory=[];
 try{const qh=localStorage.getItem('jlpt_quiz_hist');if(qh)quizHistory=JSON.parse(qh);}catch(_){}
-
+ 
 function rendTry(){
   const done=cntDone();
   const list=document.getElementById('trylist');list.innerHTML='';
@@ -1003,12 +1104,12 @@ function rendTry(){
   // Locked tryouts per 5 bab
   const tryouts=[];
   for(let i=1;i<=10;i++){const req=i*5,ul=done>=req;tryouts.push({i,req,ul});}
-
+ 
   // Mode buttons
   list.insertAdjacentHTML('beforeend',`<div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:13px">${
     modes.map(m=>`<button class="btn${m.req>done?' bghost':' bwarn'} bsm" style="font-size:.7rem" onclick="startQuiz('${m.key}')">${m.icon} ${m.label}</button>`).join('')
   }</div>`);
-
+ 
   // Locked tryout list
   list.insertAdjacentHTML('beforeend',`<div style="font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Tryout Terkunci per 5 Bab</div>`);
   tryouts.forEach(({i,req,ul})=>{
@@ -1018,10 +1119,10 @@ function rendTry(){
       <button class="trbtn" ${ul?'':'disabled'} onclick="startQuiz('locked',${i})">Mulai</button>
     </div>`);
   });
-
+ 
   // Score history
   rendScoreHist();
-
+ 
   // Update progress bar
   const pct=done>=50?100:((done%5)/5)*100;
   const tb=document.getElementById('tryb');if(tb)tb.style.width=pct+'%';
@@ -1029,7 +1130,7 @@ function rendTry(){
   const tr=document.getElementById('tryr');
   if(tr)tr.textContent=done>=50?'✅ Semua Tryout terbuka!':`Tryout berikut: selesaikan ${Math.min(n5,50)-done} bab lagi`;
 }
-
+ 
 function startQuiz(mode, tryNum){
   snd('click');
   let pool=[...TRYOUT_BANK];
@@ -1046,7 +1147,7 @@ function startQuiz(mode, tryNum){
   renderQuizQ();
   document.getElementById('quizArea').scrollIntoView({behavior:'smooth',block:'start'});
 }
-
+ 
 function renderQuizQ(){
   const qa=document.getElementById('quizArea');
   if(!activeQuiz||activeQuiz.cur>=activeQuiz.pool.length){showQuizResult();return;}
@@ -1072,7 +1173,7 @@ function renderQuizQ(){
     </div>
   </div>`;
 }
-
+ 
 function answerQuiz(chosen,correct,qid){
   const opts=document.querySelectorAll('.qz-opt');
   opts.forEach((el,i)=>{el.disabled=true;if(i===correct)el.classList.add('correct');else if(i===chosen)el.classList.add('wrong');});
@@ -1082,14 +1183,14 @@ function answerQuiz(chosen,correct,qid){
   if(chosen===correct){snd('correct');toast('✅ Benar! +10 XP');D.xp=(D.xp||0)+10;svD();}
   else{snd('wrong');toast('❌ Salah — baca penjelasannya');}
 }
-
+ 
 function skipQuiz(){
   const q=activeQuiz.pool[activeQuiz.cur];
   activeQuiz.answers[q.id]={chosen:-1,correct:q.ans,right:false};
   activeQuiz.cur++;renderQuizQ();
 }
 function nextQuiz(){activeQuiz.cur++;renderQuizQ();}
-
+ 
 function showQuizResult(){
   const {pool,title,answers}=activeQuiz;
   const correct=Object.values(answers).filter(a=>a.right).length;
@@ -1097,14 +1198,14 @@ function showQuizResult(){
   const pct=Math.round(correct/total*100);
   const col=pct>=80?'var(--ok)':pct>=60?'var(--warn)':'var(--red)';
   const msg=pct>=80?'素晴らしい！Luar biasa!':pct>=60?'良いね！Cukup baik — terus berlatih!':'もう一度！Perlu lebih banyak latihan!';
-
+ 
   quizHistory.unshift({title,correct,total,pct,date:new Date().toISOString()});
   quizHistory=quizHistory.slice(0,20);
   try{localStorage.setItem('jlpt_quiz_hist',JSON.stringify(quizHistory));}catch(_){}
-
+ 
   const bonus=Math.round(pct*0.5);
   D.xp=(D.xp||0)+bonus;svD();
-
+ 
   const qa=document.getElementById('quizArea');
   const reviewRows=pool.map((q,idx)=>{
     const a=answers[q.id];
@@ -1116,7 +1217,7 @@ function showQuizResult(){
       ${!right&&!skip?`<div style="font-size:.66rem;color:var(--muted);margin-top:3px;font-style:italic">${q.expl}</div>`:''}
     </div>`;
   }).join('');
-
+ 
   qa.innerHTML=`<div class="card" style="text-align:center">
     <div class="score-ring">
       <svg width="90" height="90" viewBox="0 0 90 90">
@@ -1138,7 +1239,7 @@ function showQuizResult(){
   activeQuiz=null;
   rendScoreHist();
 }
-
+ 
 function rendScoreHist(){
   const sc=document.getElementById('scoreCard');
   const sh=document.getElementById('scoreHistory');
@@ -1157,16 +1258,35 @@ function rendScoreHist(){
     </div>`;
   }).join('');
 }
-
+ 
 // ============================================================
-// INIT
+// INIT — tunggu Firebase siap lalu jalankan
 // ============================================================
-updStreak();
-analyzeData();
-ldCard(0);
-updPUI();
-updFcStat();
-rendScoreHist();
+function initApp(){
+  // Sync D dari window.D yang sudah diisi Firebase
+  if(window.D)D=Object.assign({},DEF,window.D);
+  updStreak();
+  analyzeData();
+  ldCard(0);
+  updPUI();
+  updFcStat();
+  rendScoreHist();
+  if(window.showSyncStatus)window.showSyncStatus('synced');
+}
+ 
+// Jika Firebase sudah siap, langsung init. Jika belum, tunggu event.
+if(window._fbReady){
+  initApp();
+}else{
+  // Tampilkan dulu pakai localStorage sambil tunggu Firebase
+  updStreak();analyzeData();ldCard(0);updPUI();updFcStat();rendScoreHist();
+  // Lalu update lagi saat Firebase selesai load
+  document.addEventListener('fb-ready',()=>{
+    if(window.D)D=Object.assign({},DEF,window.D);
+    analyzeData();rendScoreHist();
+    if(window.showSyncStatus)window.showSyncStatus('synced');
+  },{once:true});
+}
 </script>
 </body>
 </html>
