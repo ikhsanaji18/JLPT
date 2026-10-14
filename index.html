@@ -66,31 +66,7 @@ nav{position:sticky;top:0;width:100%;background:rgba(8,14,26,.97);display:flex;b
 .bghost{background:transparent;border:1px solid var(--bdr);color:var(--txt)}
 .bsm{padding:8px 11px;font-size:.72rem;width:auto}
  
-/* POMODORO */
-.pomoring{position:relative;width:155px;height:155px;margin:0 auto 11px}
-.psv{width:100%;height:100%;transform:rotate(-90deg)}
-.pbg{fill:none;stroke:var(--bdr);stroke-width:8}
-.pfg{fill:none;stroke:var(--acc);stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset .8s ease;stroke-dasharray:439.8;stroke-dashoffset:0}
-.ptime{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
-.pmin{font-size:1.9rem;font-weight:900;display:block;font-variant-numeric:tabular-nums}
-.pmode{font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
-.pbtns{display:flex;gap:8px}
  
-/* FLASHCARD */
-.fcs{width:100%;height:195px;perspective:1200px;margin-bottom:11px;cursor:pointer}
-.fcc{width:100%;height:100%;position:relative;transition:transform .55s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
-.fcc.flip{transform:rotateY(180deg)}
-.fcf{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border:2px solid var(--bdr);padding:18px}
-.fcfront{background:var(--bg)}
-.fcback{background:var(--bg3);color:var(--ok);transform:rotateY(180deg);border-color:var(--ok)}
-.fcjp{font-size:2.9rem;font-weight:900;font-family:'Noto Sans JP',sans-serif;line-height:1}
-.fclv{font-size:.52rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px}
-.fcmn{font-size:1.05rem;font-weight:700;margin-top:6px}
-.fcrm{font-size:.78rem;color:var(--muted);font-style:italic;margin-top:4px}
-.fcht{position:absolute;bottom:11px;font-size:.62rem;color:var(--muted);letter-spacing:1px}
-.fcsr{display:flex;gap:8px;font-size:.7rem;color:var(--muted);justify-content:space-between;background:rgba(0,0,0,.3);padding:9px 13px;border-radius:8px;margin-top:9px}
-.fcpb{height:3px;background:var(--bdr);border-radius:2px;margin-bottom:9px;overflow:hidden}
-.fcpbf{height:100%;background:linear-gradient(90deg,var(--acc),var(--ok));border-radius:2px;transition:width .4s}
  
 /* TRACKER */
 .bi{background:rgba(0,0,0,.3);margin-bottom:9px;border-radius:9px;padding:12px;border:1px solid var(--bdr);transition:.3s}
@@ -142,10 +118,6 @@ nav{position:sticky;top:0;width:100%;background:rgba(8,14,26,.97);display:flex;b
 /* CHART */
 .cw{position:relative;width:100%;height:125px;margin-top:11px}
  
-/* FOCUS MODE */
-#fov{position:fixed;inset:0;background:#030810;z-index:300;display:none;flex-direction:column;align-items:center;justify-content:center;padding:18px;gap:17px}
-#fov.show{display:flex}
-.fclose{position:absolute;top:14px;right:14px;background:none;border:1px solid var(--bdr);color:var(--muted);border-radius:8px;padding:5px 11px;font-size:.7rem;cursor:pointer;font-family:'JetBrains Mono',monospace}
  
 /* TOAST */
 #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(18px);background:var(--bg3);border:1px solid var(--acc);border-radius:10px;padding:9px 18px;font-size:.75rem;font-weight:700;color:var(--acc);opacity:0;transition:.3s;z-index:600;pointer-events:none;white-space:nowrap;max-width:90vw;text-align:center}
@@ -197,7 +169,6 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
 <nav id="bnav">
   <button class="nb active" data-t="tab-dash"><span class="ni">📊</span>Dash</button>
   <button class="nb" data-t="tab-track"><span class="ni">📝</span>Track</button>
-  <button class="nb" data-t="tab-flash"><span class="ni">🧠</span>Flash</button>
   <button class="nb" data-t="tab-try"><span class="ni">⚔️</span>Ujian</button>
   <button class="nb" data-t="tab-stats"><span class="ni">📈</span>Stats</button>
 </nav>
@@ -212,35 +183,12 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
   </div>
 </div>
  
-<!-- FOCUS MODE -->
-<div id="fov">
-  <button class="fclose" onclick="toggleFocus()">✕ Keluar Focus</button>
-  <div style="font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px">⛩ FOCUS MODE — POMODORO</div>
-  <div class="pomoring" style="width:125px;height:125px">
-    <svg class="psv" viewBox="0 0 150 150">
-      <circle class="pbg" cx="75" cy="75" r="60"/>
-      <circle class="pfg" id="fring" cx="75" cy="75" r="60" style="stroke-dasharray:376.99"/>
-    </svg>
-    <div class="ptime"><span class="pmin" id="ftm">25:00</span><span class="pmode" id="fmd">FOCUS</span></div>
-  </div>
-  <div style="width:100%;max-width:360px">
-    <div class="fcs">
-      <div class="fcc" id="ffcard">
-        <div class="fcf fcfront"><div class="fclv" id="fflv">N5</div><div class="fcjp" id="ffjp">...</div><div class="fcht">Ketuk untuk membalik ✦</div></div>
-        <div class="fcf fcback"><div class="fcmn" id="ffmn">...</div><div class="fcrm" id="ffrm">...</div><div class="fcht">Ingat atau lupa?</div></div>
-      </div>
-    </div>
-    <div class="g2" style="gap:8px">
-      <button class="btn bred" onclick="fhard()">✗ Lupa</button>
-      <button class="btn bok" onclick="feasy()">✓ Ingat</button>
-    </div>
-  </div>
-</div>
  
 <!-- HEADER -->
 <header>
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px">
-    <div class="elbl" style="margin:0">目標: JLPT N3, N4, N5 — 6 DESEMBER 2026</div>
+    <div class="elbl" style="margin:0">目標: JLPT N5, N4, N3 — 4 JULI 2027</div>
+    <a href="https://journalstudy.notion.site/FT-B2-N3-1b9374971493805b98f5dbdc883f029b" target="_blank" class="bno" style="margin-left:8px;border-color:var(--ok); background:rgba(15,214,138,.1);"><span>📗</span>Materi N3</a>
     <div id="sync-status" style="font-size:.62rem;font-weight:700"><span style="color:var(--muted)">◌ Memuat...</span></div>
   </div>
   <div class="clk" id="clk">00:00:00:00</div>
@@ -270,14 +218,13 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
       <a href="https://journalstudy.notion.site/FT-B2-N3-1b9374971493805b98f5dbdc883f029b" target="_blank" class="bno" style="border-color:var(--ok); background:rgba(15,214,138,.1);">
         <span>📗</span>Materi N3<small style="font-size:.62rem;font-weight:400">Bab 51–75</small>
       </a>
-      <a href="https://journalstudy.notion.site/FT-B1-N4-1533749714938140bf96edf6bf68660a" target="_blank" class="bno">
+      <a href="https://journalstudy.notion.site/FT-B2-N4-1533749714938140bf96edf6bf68660a" target="_blank" class="bno">
         <span>📙</span>Materi N4<small style="font-size:.62rem;font-weight:400">Bab 26–50</small>
       </a>
       <a href="https://journalstudy.notion.site/FT-B1-N5-15337497149381f38240d171b83a0f5e" target="_blank" class="bno">
         <span>📘</span>Materi N5<small style="font-size:.62rem;font-weight:400">Bab 1–25</small>
       </a>
     </div>
-    <button class="btn bghost" style="font-size:.78rem" onclick="toggleFocus()">⛩ Aktifkan Focus Mode + Pomodoro</button>
   </div>
  
   <div class="card">
@@ -325,50 +272,11 @@ footer{text-align:center;padding:16px;font-size:.62rem;color:var(--muted);letter
 <div id="tab-track" class="tab">
   <div class="card">
     <h2>Tracker Eksekusi <span>📝</span></h2>
-    <p style="font-size:.7rem;color:var(--muted);margin-bottom:11px">Selesaikan berurutan. Bab 1-25 (N5), 26-50 (N4), 51-75 (N3).</p>
+    <p style="font-size:.7rem;color:var(--muted);margin-bottom:11px">Selesaikan berurutan. Bab 1-25 (N5), 26-50 (N3), 51-75 (N3).</p>
     <div id="tlist"></div>
   </div>
 </div>
  
-<!-- TAB FLASH -->
-<div id="tab-flash" class="tab">
-  <div class="card">
-    <h2>Mega Database N5–N3 <span>🧠</span></h2>
-    <div style="background:rgba(0,0,0,.35);border-radius:9px;padding:13px;margin-bottom:13px;border:1px solid var(--bdr)">
-      <div style="font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:9px;text-align:center">⏱ POMODORO TIMER</div>
-      <div class="pomoring">
-        <svg class="psv" viewBox="0 0 150 150">
-          <circle class="pbg" cx="75" cy="75" r="65"/>
-          <circle class="pfg" id="pring" cx="75" cy="75" r="65"/>
-        </svg>
-        <div class="ptime"><span class="pmin" id="pdsp">25:00</span><span class="pmode" id="pmlb">FOCUS</span></div>
-      </div>
-      <div class="pbtns">
-        <button class="btn bghost bsm" style="flex:1" id="ptoggle" onclick="pToggle()">▶ Mulai</button>
-        <button class="btn bghost bsm" style="flex:1" onclick="pReset()">↺ Reset</button>
-        <button class="btn bghost bsm" style="flex:1" onclick="pSkip()">⏭ Skip</button>
-      </div>
-    </div>
-    <p style="font-size:.7rem;color:var(--muted);margin-bottom:7px">Ketuk kartu untuk membalik. Nilai jujur.</p>
-    <div class="fcpb"><div class="fcpbf" id="fcpb" style="width:0%"></div></div>
-    <div style="font-size:.62rem;color:var(--muted);text-align:center;margin-bottom:9px" id="fcpg">Kartu 1 dari X</div>
-    <div class="fcs" id="fscene">
-      <div class="fcc" id="fcard">
-        <div class="fcf fcfront"><div class="fclv" id="fclv">N5</div><div class="fcjp" id="fcjp">...</div><div class="fcht">Ketuk untuk membalik ✦</div></div>
-        <div class="fcf fcback"><div class="fcmn" id="fcmn">...</div><div class="fcrm" id="fcrm">...</div><div class="fcht">Jujur: ingat atau lupa?</div></div>
-      </div>
-    </div>
-    <div class="g2" style="gap:9px;margin-bottom:9px">
-      <button class="btn bred" id="bhard">✗ Lupa — Ulangi</button>
-      <button class="btn bok" id="beasy">✓ Ingat — Lanjut</button>
-    </div>
-    <div class="fcsr">
-      <span>✓ Ingat: <strong id="fcok" style="color:var(--ok)">0</strong></span>
-      <span>✗ Lupa: <strong id="fcng" style="color:var(--red)">0</strong></span>
-      <span>🎯 <strong id="fcac" style="color:var(--acc)">–%</strong></span>
-    </div>
-  </div>
-</div>
  
 <!-- TAB UJIAN -->
 <div id="tab-try" class="tab">
@@ -423,12 +331,12 @@ import{initializeApp}from'https://www.gstatic.com/firebasejs/10.12.0/firebase-ap
 import{getFirestore,doc,setDoc,onSnapshot,getDoc}from'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
  
 const firebaseConfig={
-  apiKey:"AIzaSyABA9fkznlaHSk8zqkouTd0TVa6DR48ugQ",
-  authDomain:"jlpt-tracker-cd03f.firebaseapp.com",
-  projectId:"jlpt-tracker-cd03f",
-  storageBucket:"jlpt-tracker-cd03f.firebasestorage.app",
-  messagingSenderId:"371403935529",
-  appId:"1:371403935529:web:b6d87a1bf932c6c5cd7138"
+  apiKey:"YOUR_API_KEY",
+  authDomain:"YOUR_AUTH_DOMAIN",
+  projectId:"YOUR_PROJECT_ID",
+  storageBucket:"YOUR_STORAGE_BUCKET",
+  messagingSenderId:"YOUR_MESSAGING_SENDER_ID",
+  appId:"YOUR_APP_ID"
 };
  
 const fbApp=initializeApp(firebaseConfig);
@@ -505,14 +413,14 @@ showSyncStatus('loading');
 // ============================================================
 // CONFIG & STORE - JLPT MASTER UPDATE
 // ============================================================
-const TBAB=75; // N5 (25) + N4 (25) + N3 (25)
+const TBAB=75; // N5 (25) + N3 (25) + N3 (25)
 const STORE='jlpt_ult_v7_master';
 const START=new Date('2026-08-20T00:00:00+07:00');
-const EXAM=new Date('2026-12-06T08:30:00+07:00').getTime();
+const EXAM=new Date('2027-07-04T08:30:00+07:00').getTime();
 const TKS=['v1','v2','voc','grm','evl','knj'];
 const TKL={v1:'Vid 1',v2:'Vid 2',voc:'Vocab',grm:'Gram',evl:'Eval',knj:'Kanji'};
  
-const DEF={progress:{},streak:0,lastActive:'',xp:0,heatmap:{},achEarned:[],pomoCycles:0,fcKnown:0,fcForgot:0};
+const DEF={progress:{},streak:0,lastActive:'',xp:0,heatmap:{},achEarned:[]};
 window.DEF=DEF;
 let D=Object.assign({},DEF);
 try{const s=localStorage.getItem(STORE);if(s)D=Object.assign({},DEF,JSON.parse(s));}catch(_){}
@@ -578,7 +486,6 @@ function snd(type){
   else if(type==='flip'){const buf=AC.createBuffer(1,~~(AC.sampleRate*.1),AC.sampleRate);const d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,1.5)*.3;const src=AC.createBufferSource(),g=AC.createGain();src.buffer=buf;src.connect(g);g.connect(AC.destination);g.gain.setValueAtTime(.35,t);g.gain.exponentialRampToValueAtTime(.001,t+.12);src.start(t);}
   else if(type==='achievement'){[523,659,784,880,1047,784].forEach((f,i)=>{osc(f,'sine',.22,.28,t+i*.09);});}
   else if(type==='streak'){osc(440,'sine',.9,.4,t,420);osc(880,'sine',.5,.15,t,.5);}
-  else if(type==='pomo'){[880,1760,880,440].forEach((f,i)=>osc(f,'sine',.85+i*.1,.3,t+i*.55,f*.98));}
   else if(type==='unlock'){[330,440,550,660,880].forEach((f,i)=>osc(f,'sine',.16,.2,t+i*.06));}
   else if(type==='tab'){osc(600,'sine',.06,.1);}
   else if(type==='bab'){[523,659,784].forEach((f,i)=>osc(f,'sine',.4,.25,t+i*.05));osc(1047,'sine',.6,.2,t+.2);}
@@ -683,12 +590,10 @@ function cntTask(){let n=0;for(let i=1;i<=TBAB;i++){const p=D.progress['b'+i];if
 const ACHS=[
   {id:'f1',ico:'🌸',nm:'Langkah Pertama',desc:'Selesaikan Bab 1!',chk:()=>cntDone()>=1},
   {id:'b25',ico:'🗻',nm:'N5 Tuntas',desc:'25 Bab selesai!',chk:()=>cntDone()>=25},
-  {id:'b50',ico:'🏯',nm:'N4 Tuntas',desc:'50 Bab selesai!',chk:()=>cntDone()>=50},
+  {id:'b50',ico:'🏯',nm:'N3 Tuntas',desc:'50 Bab selesai!',chk:()=>cntDone()>=50},
   {id:'b75',ico:'🐉',nm:'Master N3',desc:'Semua 75 Bab selesai!',chk:()=>cntDone()>=75},
   {id:'s3',ico:'🔥',nm:'3 Hari Streak',desc:'3 hari berturut-turut!',chk:()=>(D.streak||0)>=3},
   {id:'s7',ico:'🌟',nm:'Seminggu Penuh',desc:'7 hari streak!',chk:()=>(D.streak||0)>=7},
-  {id:'p5',ico:'🍵',nm:'Pejuang Pomodoro',desc:'5 sesi pomodoro.',chk:()=>(D.pomoCycles||0)>=5},
-  {id:'fc100',ico:'🎴',nm:'100 Kartu',desc:'Review 100 flashcard.',chk:()=>((D.fcKnown||0)+(D.fcForgot||0))>=100},
   {id:'xp1000',ico:'⚡',nm:'1000 XP',desc:'Kumpulkan 1000 XP.',chk:()=>(D.xp||0)>=1000},
 ];
 function chkAch(){
@@ -815,7 +720,7 @@ function rendPcht(){
     lb.push('B'+i);
     const d=babDone(i)?1:0;
     dt.push(d);
-    // Warna: N5 biru, N4 ungu, N3 hijau
+    // Warna: N5 biru, N3 ungu, N3 hijau
     let color = i<=25 ? '#4f8ef7' : i<=50 ? '#7c5af7' : '#0fd68a';
     bg.push(d?color:'#1e3050');
   }
@@ -841,11 +746,11 @@ function rendStats(){
  
   const re=document.getElementById('srec');
   if(re){
-    const done=cntDone(),tasks=cntTask(),fct=(D.fcKnown||0)+(D.fcForgot||0),fca=fct?Math.round((D.fcKnown/fct)*100):0;
+    const done=cntDone(),tasks=cntTask();
     re.innerHTML=[
       ['📚','Bab Selesai',`${done}/75`],['✅','Total Task',`${tasks}/450`],
-      ['🔥','Streak',`${D.streak||0} hari`],['⏱','Sesi Pomodoro',`${D.pomoCycles||0}x`],
-      ['🎴','Kartu Direview',`${fct}`],['🎯','Akurasi FC',`${fca}%`],['⚡','Total XP',`${D.xp||0}`],
+      ['🔥','Streak',`${D.streak||0} hari`],
+      ['⚡','Total XP',`${D.xp||0}`],
     ].map(([i,n,v])=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:.76rem"><span>${i} ${n}</span><strong style="color:var(--acc)">${v}</strong></div>`).join('');
   }
 }
@@ -885,7 +790,7 @@ document.getElementById('tlist').addEventListener('click',e=>{
 });
  
 // ============================================================
-// FLASHCARD (Tetap menggunakan bank N5/N4 yang ada)
+// FLASHCARD (Tetap menggunakan bank N5/N3 yang ada)
 // ============================================================
 const VC=[
   {jp:"行く",r:"iku",m:"Pergi",l:"N5"},{jp:"来る",r:"kuru",m:"Datang",l:"N5"},
@@ -908,30 +813,30 @@ const VC=[
   {jp:"人",r:"hito",m:"Orang",l:"N5"},{jp:"友達",r:"tomodachi",m:"Teman",l:"N5"},
   {jp:"何",r:"nani",m:"Apa",l:"N5"},{jp:"どこ",r:"doko",m:"Di mana",l:"N5"},
   {jp:"いつ",r:"itsu",m:"Kapan",l:"N5"},{jp:"なぜ",r:"naze",m:"Mengapa",l:"N5"},
-  {jp:"集める",r:"atsumeru",m:"Mengumpulkan",l:"N4"},{jp:"謝る",r:"ayamaru",m:"Meminta maaf",l:"N4"},
-  {jp:"急ぐ",r:"isogu",m:"Bergegas",l:"N4"},{jp:"祈る",r:"inoru",m:"Berdoa",l:"N4"},
-  {jp:"動く",r:"ugoku",m:"Bergerak",l:"N4"},{jp:"選ぶ",r:"erabu",m:"Memilih",l:"N4"},
-  {jp:"怒る",r:"okoru",m:"Marah",l:"N4"},{jp:"落とす",r:"otosu",m:"Menjatuhkan",l:"N4"},
-  {jp:"思い出す",r:"omoidasu",m:"Teringat kembali",l:"N4"},{jp:"考える",r:"kangaeru",m:"Berpikir",l:"N4"},
-  {jp:"頑張る",r:"ganbaru",m:"Bersemangat / Berjuang",l:"N4"},{jp:"決める",r:"kimeru",m:"Memutuskan",l:"N4"},
-  {jp:"比べる",r:"kuraberu",m:"Membandingkan",l:"N4"},{jp:"壊れる",r:"kowareru",m:"Rusak (intransitif)",l:"N4"},
-  {jp:"探す",r:"sagasu",m:"Mencari",l:"N4"},{jp:"調べる",r:"shiraberu",m:"Memeriksa",l:"N4"},
-  {jp:"育てる",r:"sodateru",m:"Membesarkan",l:"N4"},{jp:"倒れる",r:"taoreru",m:"Tumbang / Jatuh",l:"N4"},
-  {jp:"頼む",r:"tanomu",m:"Memohon / Minta tolong",l:"N4"},{jp:"続ける",r:"tsuzukeru",m:"Melanjutkan",l:"N4"},
-  {jp:"手伝う",r:"tetsudau",m:"Membantu",l:"N4"},{jp:"直す",r:"naosu",m:"Memperbaiki",l:"N4"},
-  {jp:"泣く",r:"naku",m:"Menangis",l:"N4"},{jp:"慣れる",r:"nareru",m:"Menjadi terbiasa",l:"N4"},
-  {jp:"逃げる",r:"nigeru",m:"Melarikan diri",l:"N4"},{jp:"盗む",r:"nusumu",m:"Mencuri",l:"N4"},
-  {jp:"眠る",r:"nemuru",m:"Tidur (formal)",l:"N4"},{jp:"運ぶ",r:"hakobu",m:"Mengangkut",l:"N4"},
-  {jp:"払う",r:"harau",m:"Membayar",l:"N4"},{jp:"褒める",r:"homeru",m:"Memuji",l:"N4"},
-  {jp:"間違える",r:"machigaeru",m:"Melakukan kesalahan",l:"N4"},{jp:"約束",r:"yakusoku",m:"Janji",l:"N4"},
-  {jp:"理由",r:"riyuu",m:"Alasan",l:"N4"},{jp:"準備",r:"junbi",m:"Persiapan",l:"N4"},
-  {jp:"経験",r:"keiken",m:"Pengalaman",l:"N4"},{jp:"失敗",r:"shippai",m:"Kegagalan",l:"N4"},
-  {jp:"成功",r:"seikou",m:"Kesuksesan",l:"N4"},{jp:"場合",r:"baai",m:"Kasus / Situasi",l:"N4"},
-  {jp:"以上",r:"ijou",m:"Lebih dari / Selesai",l:"N4"},{jp:"以下",r:"ika",m:"Kurang dari / Di bawah",l:"N4"},
-  {jp:"特に",r:"toku ni",m:"Terutama / Khususnya",l:"N4"},{jp:"必要",r:"hitsuyou",m:"Diperlukan",l:"N4"},
-  {jp:"残念",r:"zannen",m:"Sayang sekali / Menyesal",l:"N4"},{jp:"大切",r:"taisetsu",m:"Penting / Berharga",l:"N4"},
-  {jp:"安全",r:"anzen",m:"Aman",l:"N4"},{jp:"危険",r:"kiken",m:"Berbahaya",l:"N4"},
-  {jp:"最近",r:"saikin",m:"Belakangan ini",l:"N4"},{jp:"丁寧",r:"teinei",m:"Sopan / Teliti",l:"N4"},
+  {jp:"集める",r:"atsumeru",m:"Mengumpulkan",l:"N3"},{jp:"謝る",r:"ayamaru",m:"Meminta maaf",l:"N3"},
+  {jp:"急ぐ",r:"isogu",m:"Bergegas",l:"N3"},{jp:"祈る",r:"inoru",m:"Berdoa",l:"N3"},
+  {jp:"動く",r:"ugoku",m:"Bergerak",l:"N3"},{jp:"選ぶ",r:"erabu",m:"Memilih",l:"N3"},
+  {jp:"怒る",r:"okoru",m:"Marah",l:"N3"},{jp:"落とす",r:"otosu",m:"Menjatuhkan",l:"N3"},
+  {jp:"思い出す",r:"omoidasu",m:"Teringat kembali",l:"N3"},{jp:"考える",r:"kangaeru",m:"Berpikir",l:"N3"},
+  {jp:"頑張る",r:"ganbaru",m:"Bersemangat / Berjuang",l:"N3"},{jp:"決める",r:"kimeru",m:"Memutuskan",l:"N3"},
+  {jp:"比べる",r:"kuraberu",m:"Membandingkan",l:"N3"},{jp:"壊れる",r:"kowareru",m:"Rusak (intransitif)",l:"N3"},
+  {jp:"探す",r:"sagasu",m:"Mencari",l:"N3"},{jp:"調べる",r:"shiraberu",m:"Memeriksa",l:"N3"},
+  {jp:"育てる",r:"sodateru",m:"Membesarkan",l:"N3"},{jp:"倒れる",r:"taoreru",m:"Tumbang / Jatuh",l:"N3"},
+  {jp:"頼む",r:"tanomu",m:"Memohon / Minta tolong",l:"N3"},{jp:"続ける",r:"tsuzukeru",m:"Melanjutkan",l:"N3"},
+  {jp:"手伝う",r:"tetsudau",m:"Membantu",l:"N3"},{jp:"直す",r:"naosu",m:"Memperbaiki",l:"N3"},
+  {jp:"泣く",r:"naku",m:"Menangis",l:"N3"},{jp:"慣れる",r:"nareru",m:"Menjadi terbiasa",l:"N3"},
+  {jp:"逃げる",r:"nigeru",m:"Melarikan diri",l:"N3"},{jp:"盗む",r:"nusumu",m:"Mencuri",l:"N3"},
+  {jp:"眠る",r:"nemuru",m:"Tidur (formal)",l:"N3"},{jp:"運ぶ",r:"hakobu",m:"Mengangkut",l:"N3"},
+  {jp:"払う",r:"harau",m:"Membayar",l:"N3"},{jp:"褒める",r:"homeru",m:"Memuji",l:"N3"},
+  {jp:"間違える",r:"machigaeru",m:"Melakukan kesalahan",l:"N3"},{jp:"約束",r:"yakusoku",m:"Janji",l:"N3"},
+  {jp:"理由",r:"riyuu",m:"Alasan",l:"N3"},{jp:"準備",r:"junbi",m:"Persiapan",l:"N3"},
+  {jp:"経験",r:"keiken",m:"Pengalaman",l:"N3"},{jp:"失敗",r:"shippai",m:"Kegagalan",l:"N3"},
+  {jp:"成功",r:"seikou",m:"Kesuksesan",l:"N3"},{jp:"場合",r:"baai",m:"Kasus / Situasi",l:"N3"},
+  {jp:"以上",r:"ijou",m:"Lebih dari / Selesai",l:"N3"},{jp:"以下",r:"ika",m:"Kurang dari / Di bawah",l:"N3"},
+  {jp:"特に",r:"toku ni",m:"Terutama / Khususnya",l:"N3"},{jp:"必要",r:"hitsuyou",m:"Diperlukan",l:"N3"},
+  {jp:"残念",r:"zannen",m:"Sayang sekali / Menyesal",l:"N3"},{jp:"大切",r:"taisetsu",m:"Penting / Berharga",l:"N3"},
+  {jp:"安全",r:"anzen",m:"Aman",l:"N3"},{jp:"危険",r:"kiken",m:"Berbahaya",l:"N3"},
+  {jp:"最近",r:"saikin",m:"Belakangan ini",l:"N3"},{jp:"丁寧",r:"teinei",m:"Sopan / Teliti",l:"N3"},
 ];
 let shuf=[...VC].sort(()=>Math.random()-.5),fci=0,fcok=D.fcKnown||0,fcng=D.fcForgot||0;
  
@@ -965,46 +870,7 @@ document.getElementById('ffcard').addEventListener('click',()=>{document.getElem
 function feasy(){fcok++;updFcStat();snd('correct');D.xp=(D.xp||0)+5;fci++;ldCard(fci);svD();}
 function fhard(){fcng++;updFcStat();snd('wrong');fci++;ldCard(fci);svD();}
  
-// ============================================================
-// POMODORO
-// ============================================================
-let pRun=false,pSec=25*60,pMode='focus',pInt=null;
-const PF=25*60,PB=5*60;
-function pfmt(s){return`${String(~~(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;}
-function updPUI(){
-  const tot=pMode==='focus'?PF:PB,pct=pSec/tot;
-  const r1=document.getElementById('pring');
-  if(r1){const da=439.8;r1.style.strokeDasharray=String(da);r1.style.strokeDashoffset=String(da*(1-pct));}
-  const r2=document.getElementById('fring');
-  if(r2){const da=376.99;r2.style.strokeDasharray=String(da);r2.style.strokeDashoffset=String(da*(1-pct));}
-  ['pdsp','ftm'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=pfmt(pSec);});
-  ['pmlb','fmd'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=pMode==='focus'?'FOCUS':'BREAK';});
-}
-function pTick(){
-  pSec--;updPUI();
-  if(pSec<=0){
-    clearInterval(pInt);pInt=null;pRun=false;
-    snd('pomo');
-    if(pMode==='focus'){
-      D.pomoCycles=(D.pomoCycles||0)+1;D.xp=(D.xp||0)+30;
-      toast('🍵 Pomodoro selesai! +30 XP — お疲れ様！Istirahat 5 menit');
-      pMode='break';pSec=PB;
-    } else {
-      toast('⏰ Istirahat selesai! よし、頑張ろう！');
-      pMode='focus';pSec=PF;
-    }
-    document.getElementById('ptoggle').textContent='▶ Mulai';
-    save();
-  }
-}
-function pToggle(){unlockAC();const btn=document.getElementById('ptoggle');if(pRun){clearInterval(pInt);pInt=null;pRun=false;btn.textContent='▶ Lanjut';}else{pInt=setInterval(pTick,1000);pRun=true;btn.textContent='⏸ Pause';snd('click');};}
-function pReset(){clearInterval(pInt);pInt=null;pRun=false;pMode='focus';pSec=PF;updPUI();document.getElementById('ptoggle').textContent='▶ Mulai';snd('click');}
-function pSkip(){clearInterval(pInt);pInt=null;pRun=false;snd('click');pMode=pMode==='focus'?'break':'focus';pSec=pMode==='focus'?PF:PB;updPUI();document.getElementById('ptoggle').textContent='▶ Mulai';}
  
-// ============================================================
-// FOCUS MODE
-// ============================================================
-function toggleFocus(){unlockAC();const el=document.getElementById('fov');el.classList.toggle('show');snd('click');}
  
 // ============================================================
 // TRYOUT
@@ -1216,9 +1082,7 @@ function initApp(){
   if(window.D)D=Object.assign({},DEF,window.D);
   updStreak();
   analyzeData();
-  ldCard(0);
   updPUI();
-  updFcStat();
   rendScoreHist();
   if(window.showSyncStatus)window.showSyncStatus('synced');
 }
@@ -1226,7 +1090,7 @@ function initApp(){
 if(window._fbReady){
   initApp();
 }else{
-  updStreak();analyzeData();ldCard(0);updPUI();updFcStat();rendScoreHist();
+  updStreak();analyzeData();updPUI();rendScoreHist();
   document.addEventListener('fb-ready',()=>{
     if(window.D)D=Object.assign({},DEF,window.D);
     analyzeData();rendScoreHist();
